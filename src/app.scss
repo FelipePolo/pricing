@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root{
+  //variables
+  //linear gradient
+  --LinearGradientstart: hsl(236, 72%, 79%);
+  --linearGradientEnd: hsl(237, 63%, 64%);
+
+  //neutral
+  --VeryLightGrayishBlue: hsl(240, 78%, 98%);
+  --LightGrayishBlue: hsl(234, 14%, 74%);
+  --GrayishBlue: hsl(233, 13%, 49%);
+  --DarkGrayishBlue: hsl(232, 13%, 33%);
+
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  background-color: var(--VeryLightGrayishBlue);
+  background-image: url("./components/images/bg-top.svg");
+  background-repeat: no-repeat;
+  background-position: 190px -40px;
+  background-clip: border-box;
+}
+.header{
+  width: 100%;
+  display: flex;
+  margin: 40px 0;
+  flex-direction: column;
+  align-items: center;
+
+  &_title{
+    color: var(--GrayishBlue);
+  }
+  &_container{
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+    color: var(--LightGrayishBlue);
+    label{
+      margin: 0 20px;
+    }
+    .swich{
+      border: none;
+      background: linear-gradient(90deg,var(--LinearGradientstart),var(--linearGradientEnd));
+      width: 60px;
+      border-radius: 30px;
+      display: flex;
+      padding: 5px;
+      img{
+        height: 28px;
+      }
+    }
+  }
+}
+
+@mixin card{
+  width: 90%;
+
+  margin: auto;
+  margin-top: 30px;
+  background-color: var(--VeryLightGrayishBlue);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+  text-align: center;
+  &_type{
+    padding: 30px 0 5px 0;
+    font-size: 1.4em;
+    color: var(--GrayishBlue);
+  }
+  &_money{
+    font-size: 4em;
+    margin: 20px 0;
+    height: 50px;
+    display: flex;
+    color: var(--DarkGrayishBlue);
+    justify-content: center;
+    align-items: center;
+    p{
+      display: inline;
+      font-size: 0.6em;
+      margin-right: 5px;
+    }
+  }
+  &_list{
+    margin-top: 40px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    li{
+      border-top: 1px solid var(--linearGradientEnd);
+      width: 80%;
+      p{
+        margin: 18px 0;
+        color: var(--GrayishBlue);
+      }
+    }
+    li:last-of-type{
+      border-bottom: 1px solid var(--linearGradientEnd);
+    }
+  }
+  &_button{
+    width: 80%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    margin: 20px 0;
+    background: linear-gradient(90deg,var(--LinearGradientstart),var(--linearGradientEnd));
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--VeryLightGrayishBlue);
+    text-transform: uppercase;
+
+  }
+}
+
+.card{
+  @include card;
+}
+.card:nth-child(3){
+  background: linear-gradient(90deg,var(--LinearGradientstart),var(--linearGradientEnd));
+  .card_type{
+    color: var(--VeryLightGrayishBlue);
+  }
+  .card_money{
+    color: var(--VeryLightGrayishBlue);
+  }
+  .card_list{
+    li{
+      p{
+        color: var(--VeryLightGrayishBlue);
+      }
+    }
+  }
+  .card_button{
+    background: var(--VeryLightGrayishBlue);
+    color: var(--linearGradientEnd);
+  }
+}
